@@ -64,6 +64,13 @@
   </dependencies>
 
   <build>
+    <extensions>
+      <extension>
+        <groupId>io.vgs.tools</groupId>
+        <artifactId>aws-maven</artifactId>
+        <version>1.4.4</version>
+      </extension>
+    </extensions>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -75,6 +82,32 @@
           <encoding>UTF-8</encoding>
         </configuration>
       </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
+
+  <distributionManagement>
+    <repository>
+      <id>aws-release</id>
+      <name>AWS Release Repository</name>
+      <url>s3://chainmonitor-maven/release</url>
+    </repository>
+    <snapshotRepository>
+      <id>aws-snapshot</id>
+      <name>AWS Snapshot Repository</name>
+      <url>s3://chainmonitor-maven/snapshot</url>
+    </snapshotRepository>
+  </distributionManagement>
 </project>
