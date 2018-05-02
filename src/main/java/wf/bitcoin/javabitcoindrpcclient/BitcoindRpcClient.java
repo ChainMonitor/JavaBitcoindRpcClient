@@ -603,6 +603,14 @@ public interface BitcoindRpcClient {
     public Block previous() throws GenericRpcException;
 
     public Block next() throws GenericRpcException;
+
+    public int strippedsize();
+
+    public String versionhex();
+
+    public Date mediantime();
+
+    public int weight();
   }
 
   interface VerboseBlock extends Serializable {
