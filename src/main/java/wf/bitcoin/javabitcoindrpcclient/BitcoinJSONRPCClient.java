@@ -1632,6 +1632,17 @@ public class BitcoinJSONRPCClient implements BitcoindRpcClient {
       return getBlock(nextHash());
     }
 
+    @Override
+    public int strippedsize() { return mapInt( "strippedsize"); }
+
+    @Override
+    public String versionhex() { return mapStr("versionHex"); }
+
+    @Override
+    public Date mediantime() { return mapCTime("mediantime"); }
+
+    @Override
+    public int weight() { return mapInt("weight"); }
   }
 
   private class RawTransactionImpl extends MapWrapper implements RawTransaction, Serializable {
