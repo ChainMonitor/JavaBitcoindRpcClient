@@ -702,6 +702,10 @@ public interface BitcoindRpcClient {
      */
     public interface In extends TxInput, Serializable {
 
+      public String coinbase();
+
+      public List<String> txInWitness();
+
       public Map<String, Object> scriptSig();
 
       public long sequence();
