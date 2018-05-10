@@ -1757,6 +1757,16 @@ public class BitcoinJSONRPCClient implements BitcoindRpcClient {
       }
 
       @Override
+      public String coinbase() {
+        return mapStr("coinbase");
+      }
+
+      @Override
+      public List<String> txInWitness() {
+        return (List<String>) m.get("txinwitness");
+      }
+
+      @Override
       public Map<String, Object> scriptSig() {
         return (Map) m.get("scriptSig");
       }
