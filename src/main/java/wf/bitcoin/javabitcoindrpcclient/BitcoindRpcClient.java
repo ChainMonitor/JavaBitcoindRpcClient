@@ -444,6 +444,8 @@ public interface BitcoindRpcClient {
     public double verificationProgress();
 
     public String chainWork();
+
+    public boolean pruned();
   }
 
   public static interface DecodedScript extends Serializable {
