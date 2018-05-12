@@ -1440,6 +1440,9 @@ public class BitcoinJSONRPCClient implements BitcoindRpcClient {
     public String chainWork() {
       return mapStr("chainwork");
     }
+
+    @Override
+    public boolean pruned() { return mapBool("pruned"); }
   }
 
   private class SmartFeeResultMapWrapper extends MapWrapper implements SmartFeeResult, Serializable {
