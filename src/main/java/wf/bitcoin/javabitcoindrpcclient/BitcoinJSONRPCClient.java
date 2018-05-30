@@ -1515,6 +1515,12 @@ public class BitcoinJSONRPCClient implements BitcoindRpcClient {
     }
 
     @Override
+    public String versionHex() { return mapStr("versionHex"); }
+
+    @Override
+    public Date medianTime() { return mapCTime("mediantime"); }
+
+    @Override
     public Date time() {
       return mapCTime("time");
     }
