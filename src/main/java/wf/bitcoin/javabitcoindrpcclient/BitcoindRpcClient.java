@@ -644,6 +644,10 @@ public interface BitcoindRpcClient {
     public String nextHash();
 
     public String chainwork();
+
+    String versionHex();
+
+    Date medianTime();
   }
 
   public static interface TxOutSetInfo extends Serializable {
